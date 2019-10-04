@@ -15,13 +15,13 @@ function logout()
 </script>
 </head>
 <body style="text-align:center">
-<br><br><h1>What do you like to perform</h1>
+<br><br><h1>What do you like to perform?</h1>
 <div class="box_model">
 <form action="">
 <br><br><a href="?pageName=viewAvailableStock.jsp">View Stock Availability</a> <br>
 <a href="?pageName=orderCan.jsp">Order Can</a><br>
 <a href="?pageName=reserveCan.jsp">Reserve Can</a><br>
-<!-- <a href="?pageName=orderReservedCane">Order Reserved Can</a><br> -->
+<a href="?pageName=orderReservedCan.jsp">Order Reserved Can</a><br>
 <a href="?pageName=home.jsp">Home</a><br>
 <button class="cancelBtn" onclick="logout()">Logout</button>
 </form>

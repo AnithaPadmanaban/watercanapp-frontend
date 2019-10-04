@@ -5,10 +5,10 @@
 <head>
 
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin View</title>
 </head>
 <body style="text-align:center">
-<br><br><h1>What do you like to do</h1>
+<br><br><h1>What do you like to do?</h1>
 <div class="box_model">
 <form>
 

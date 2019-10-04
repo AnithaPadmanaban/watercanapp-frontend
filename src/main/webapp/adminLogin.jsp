@@ -45,7 +45,7 @@ function adminLogin()
 
 </head>
 <body style="text-align:center">
-<br><br><h1>Admin Page</h1>
+<br><br><h1>Welcome to login page(Admin)</h1>
 <div class="login">
 <form onsubmit="adminLogin()">
 <br><br><label>Email</label>

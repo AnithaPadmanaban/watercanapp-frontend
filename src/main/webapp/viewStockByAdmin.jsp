@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>View Stock By Admin</title>
 
 <script>
 	function viewStock() {
@@ -28,7 +28,7 @@
 
 <body style="text-align:center">
 
-	<form>
+	
 		<br><br><h1>Available Stock</h1>
 
 		<br><br><div id="stock-section">
@@ -43,7 +43,7 @@
 				</tbody>
 			</table>
 		</div>
-		<input type="button" value="Cancel" class="btn btn-danger"
+		<input type="button" value="Back" class="btn btn-danger"
 			onclick="window.location.href='?pageName=adminView.jsp'">
 			
 			

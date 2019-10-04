@@ -13,7 +13,7 @@
 function validation()
 {
 	var can=document.getElementById("reserveCanID").value;
-	var regex=/^[0-9]*$/;
+	var regex=/^[1-9][0-9]*$/;
 	if(regex.test(can))
 	{
 	document.getElementById("canReserveError").innerHTML="";
@@ -39,9 +39,9 @@ function canReserve()
 	 var formData = {};
 	 $.get(url, function(response) {
 	 	    console.log(response);   
-	     var data= response;
+	     var data= JSON.parse(response);
 	        if(data.errorMessage == null) {
-	     	alert("Reserved Succesfully");
+	     	alert("Reserved Succesfully...Your reserve Id is "+data);
 	     	window.location.href= "?pageName=userView.jsp";
 	     	
 	     }
@@ -55,8 +55,8 @@ function canReserve()
 <br><br><h1>Can Reservation</h1>
 <div class="box_model">
 <form onsubmit="canReserve()">
-<br><br><label>Enter no of Can</label>
-<input type="text" id="reserveCanID" name="reserveCanName" maxlength="3"  onkeyup="validation()"><span id="canReserveError" style="color:red"></span><br>
+<br><br><label>Enter number of water-can</label>
+<input type="text" id="reserveCanID" name="reserveCanName"  onkeyup="validation()"><br><span id="canReserveError" style="color:red"></span><br>
 <input type="submit" value="Submit"  class="successBtn">
 <input type="button" value="Cancel" class="cancelBtn" onclick="window.location.href ='?pageName=userView.jsp';">
 </form>

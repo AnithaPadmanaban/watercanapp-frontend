@@ -3,12 +3,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Register Page</title>
+<title>Register</title>
 
 </head>
 <body style="text-align:center">
 
-<br><br><h1>Welcome To Register Page</h1>
+<br><h1>Welcome To Register Page</h1>
 
 
 <script>
@@ -54,7 +54,7 @@ if(passwordRegex.test(password))
 	}
 else
 	{
-	document.getElementById("passwordError").innerHTML="Password should contain alphabets or numbers";
+	document.getElementById("passwordError").innerHTML="Password should not contain special character";
 	
 	}
 }
@@ -87,13 +87,13 @@ function buttonEnable()
 	var addressRegex=/^[a-zA-Z0-9\s,'-]*$/;
 
 	
-	if(nameRegex.test(name) && emailRegex.test(email) && passwordRegex.test(password) && addressRegex.test(address))
+	if(!nameRegex.test(name) || !emailRegex.test(email) || !passwordRegex.test(password) || !addressRegex.test(address))
 		{
-		document.getElementById("registerBtnId").disabled=false;
+		document.getElementById("registerBtnId").disabled=true;
 		}
 	else
 		{
-		document.getElementById("registerBtnId").disabled=true;
+		document.getElementById("registerBtnId").disabled=false;
 		
 		}
 	}
@@ -129,17 +129,18 @@ function registerServlet()
 </script>
 <div class=container>
 <form>
-<br><br><label>Enter Name</label>
-<input type="text" id="userNameId" name="userName" onkeyup="validateName()"><span style="color:red" id="nameError"></span><br>
-<label>Enter Email</label>
+<label>Enter Name<span class="required">*</span></label>
+<input type="text" id="userNameId" name="userName" onkeyup="validateName()"><br><span style="color:red" id="nameError"></span><br>
+<label>Enter Email<span class="required">*</span></label>
 
-<input type="email" id="userEmailId" name="userEmailName" onblur="validateEmail()"><span style="color:red" id="emailError"></span><br>
+<input type="email" id="userEmailId" name="userEmailName" onblur="validateEmail()"><br><span style="color:red" id="emailError"></span><br>
 
-<label>Enter Password</label>
-<input type="password" id="userPasswordId" name="userPasswordName" maxlength="8" onkeyup="validatePassword();"><span style="color:red" id="passwordError"></span><br>
+<label>Enter Password<span class="required">*</span></label>
+<input type="password" id="userPasswordId" name="userPasswordName" maxlength="8" onkeyup="validatePassword();"><br><span style="color:red" id="passwordError"></span><br>
 <label>Enter Address</label>
-<textarea id="userAddressId" name="userAddressName" onkeyup="validateAddress();buttonEnable();"></textarea><span style="color:red" id="addressError"></span><br>
+<textarea id="userAddressId" name="userAddressName" onkeyup="validateAddress();buttonEnable();"></textarea><br><span style="color:red" id="addressError"></span><br>
 <input type="button" onclick="registerServlet()" id="registerBtnId" class="successBtn" disabled value="Register">
+<input type="reset" value="Reset" class="resetBtn">
 <input type="button" id="btnCancel" value="Cancel" class="cancelBtn" onclick="window.location.href='?pageName=home.jsp'">
 
 </form>

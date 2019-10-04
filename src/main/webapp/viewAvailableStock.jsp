@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>View Stock By User</title>
 
 <script>
 function viewStock()
@@ -29,7 +29,7 @@ function viewStock()
 
 <body style="text-align:center">
 
-<form>
+
 <br><br><h1>Available Stock</h1>
 
 <br><br><div id="stock-section">
@@ -44,7 +44,7 @@ function viewStock()
            </tbody>
        </table>
    </div>
-   <input type="button" value="Cancel" class="btn btn-danger" onclick="window.location.href='?pageName=userView.jsp'">
+   <input type="button" value="Back" class="btn btn-danger" onclick="window.location.href='?pageName=userView.jsp'">
    
 <script>
 viewStock();

@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" href="css/style.css">
+<title>User Login</title>
 <script>
 function login() {
     
@@ -16,11 +16,11 @@ function login() {
     var formData = {};
     $.get(url, function(response) {
         console.log(response);
-            var data= response;
+            var data= JSON.parse(response);
         
         if(data.errorMessage == null) {
             localStorage.setItem ("USER_ID",data);
-        	alert("Login Succesfull");
+        	alert("Login Successfully");
         	window.location.href="?pageName=userView.jsp";
         	
         }
@@ -35,7 +35,7 @@ function login() {
 </head>
 <body style="text-align:center">
 
-<br><br><h1>Welcome to login Page</h1>
+<br><br><h1>Welcome to login Page(User)</h1>
 <div class="login">
 <form>
 <br><br><label>Email</label>
