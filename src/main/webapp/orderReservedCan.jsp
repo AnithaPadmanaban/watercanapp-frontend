@@ -59,11 +59,11 @@ $.get(url, function(response) {
 	
 		<label>Enter your reserved id</label> <input type="text" id="reservedId" onkeyup="validation()"
 			name="reservedName"><br><span id="reservedIdError" style="color:red"></span><br> 
-			<p>To conform order press submit button</p>
+			<p>To conform order press Submit button</p>
 			<input
 			type="submit" value="Submit" class="successBtn">
-			<p>To modify reserved Order press modify button</p>
-			<input type="button" value="Modify" class="resetBtn" 	onclick="window.location.href ='?pageName=modifyOrder.jsp'">
+			<p>To modify reserved water-cans for order press Modify button</p>
+			<input type="button" value="Modify" class="resetBtn" 	onclick="window.location.href ='?pageName=modifyReservedOrder.jsp'">
 			<input type="button"
 			value="Cancel" class="cancelBtn"
 			onclick="window.location.href ='?pageName=userView.jsp'"> 

@@ -57,7 +57,7 @@ $.get(url, function(response) {
 <div class="box_model">
 	<form onsubmit="canOrder()">
 	
-		<br><br><label>Enter number of water-can</label> <input type="text" id="orderCanID" onkeyup="validation()"
+		<br><br><label>Enter number of water-cans</label> <input type="text" id="orderCanID" onkeyup="validation()"
 			name="orderCanName"><br><span id="canOrderError" style="color:red"></span><br> 
 			<input
 			type="submit" value="Submit" class="successBtn">

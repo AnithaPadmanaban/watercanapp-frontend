@@ -28,29 +28,14 @@
 		}
 		}
 
-	function validateReserveId()
-	{
-		var id=document.getElementById("reservedId").value;
-		var regex=/^[1-9][0-9]*$/;
-		if(regex.test(id))
-		{
-		document.getElementById("reservedIdError").innerHTML="";
-		
-		}
-	else
-		{
-		document.getElementById("reservedIdError").innerHTML="Invalid Input";
-		
-		}
-		}
+	
 	
 function canOrder()
 {
 	 event.preventDefault();
 var orderCan = document.getElementById("canId").value;
-var reserveId = document.getElementById("reservedId").value;
 var userId = localStorage.getItem("USER_ID");
-var formData = "can=" + orderCan+"&userId="+userId+"&reserveId="+reserveId;
+var formData = "can=" + orderCan+"&userId="+userId;
 
 var url = "http://localhost:8080/maven-api/OrderModifiedReservedCanServlet?" + formData;
 var formData = {};
@@ -73,11 +58,8 @@ $.get(url, function(response) {
 <h1>Can Order</h1>
 <div class="box_model">
 	<form onsubmit="canOrder()">
-	
-	
-	<label>Enter your reserved id</label> <input type="text" id="reservedId" onkeyup="validateReserveId()"
-			name="reservedName"><br><span id="reservedIdError" style="color:red"></span><br> 
-		<label>Enter number of can</label> <input type="text" id="canId" onkeyup="validateCan()"
+		
+		<label>Enter number of water-cans</label> <input type="text" id="canId" onkeyup="validateCan()"
 			name="canName"><br><span id="canErrorId" style="color:red"></span><br> 
 			<input
 			type="submit" value="Submit" class="successBtn">
